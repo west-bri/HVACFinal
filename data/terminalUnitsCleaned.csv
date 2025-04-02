@@ -1,0 +1,1 @@
+designation,time,AirFlow,Air_Flow_Diff,ClgPct,Cooling_Stg_Cmd,DmprPos,DschAirTemp,EffAirflowSp,EffOcc,EffSp,Heating_Stg_Cmd,HtgPct,OccClgSp,OccCmd,OccHtgSp,RmCo2,RmSp,RmTemp,Room_Temperature_Diff,SaTmp,StbyClgSp,StbyHtgSp,UnoccClgSp,UnoccHtgSp,VAV_Temperature_Diff,oppMode,AirflowSpRht,SaTemp,SuplFanCmd,SuplFanState
