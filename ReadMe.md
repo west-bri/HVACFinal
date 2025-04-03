@@ -10,7 +10,7 @@
 - /data/terminalUnitsCleaned.csv
 - /data/terminalUnitsRawData.csv
 
-## Data Directory
+## Data Directory - Folders containing client data
 
 - /data/terminalUnits
 - /data/correlation
