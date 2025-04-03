@@ -1,3 +1,10 @@
+# DS5110 Final Project - HVAC 
+### Bini Chandra, Brian West, Cody Snow
+
+##  Work in progress 
+
+## Communications with client
+
 This is a customer building with multiple roof top units but only 2 of them are connected to terminal units.  
 
 I included data for the 2 that are connected to terminal units and one that is not.  
