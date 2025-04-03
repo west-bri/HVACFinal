@@ -3,7 +3,19 @@
 
 ##  Work in progress
 
-- DataExploration_BW.py
+- /DataExploration_BW.py - Initial exploration of the data to determine viability of clustering, correlation, etc.
+- /data/terminalDescription.txt examines measures of central tendancy of the features we'll be studying
+- #### Data files created so far
+- /data/terminalDistinctValues.csv
+- /data/terminalUnitsCleaned.csv
+- /data/terminalUnitsRawData.csv
+
+## Data Directory
+
+- /data/terminalUnits
+- /data/correlation
+- /data/roofTopUnits
+- /data/terminalUnits
 
 ## Important info about the datasets from the client
 
