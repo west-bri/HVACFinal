@@ -1,19 +1,31 @@
 # DS5110 Final Project - HVAC 
 ### Bini Chandra, Brian West, Cody Snow
 
+## The GOAL
+    The goal of this project is to find out which Terminal Units (TUs) are connected to which Rooftop Units (RTUs) in a building, using data science techniques.
+
+    We are given:
+
+    •	3 RTU files (only 2 are connected to TUs)
+
+    •	47 TU files (labeled by letters like A.csv, AA.csv, B.csv, etc.)
+
+
 ##  Work in progress
 
 - /DataExploration_BW.py - Initial exploration of the data to determine viability of clustering, correlation, etc.
 - /data/terminalDescription.txt examines measures of central tendancy of the features we'll be studying
-- #### Data files created so far
+
+### Data files created so far
+- data/terminalUnitsCleaned/*.csv – Cleaned TU files (after forward-filling and column dropping)
+- data/correlation/*.csv – Correlation files for each TU vs RTUs
+- data/TU_RTU_Correlation_Heatmap.png – Heatmap visualizing average correlation between each TU and all 3 RTUs
 - /data/terminalDistinctValues.csv
 - /data/terminalUnitsCleaned.csv
 - /data/terminalUnitsRawData.csv
 
-## Data Directory - Folders containing client data
+### Data Directory - Folders containing client data
 
-- /data/terminalUnits
-- /data/correlation
 - /data/roofTopUnits
 - /data/terminalUnits
 
