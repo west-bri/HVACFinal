@@ -2,13 +2,14 @@
 ### Bini Chandra, Brian West, Cody Snow
 
 ## The GOAL
-    The goal of this project is to find out which Terminal Units (TUs) are connected to which Rooftop Units (RTUs) in a building, using data science techniques.
 
-    We are given:
+The goal of this project is to find out which Terminal Units (TUs) are connected to which Rooftop Units (RTUs) in a building, using data science techniques.
 
-    •	3 RTU files (only 2 are connected to TUs)
+We are given:
 
-    •	47 TU files (labeled by letters like A.csv, AA.csv, B.csv, etc.)
+   - 3 RTU files (only 2 are connected to TUs)
+
+   - 47 TU files (labeled by letters like A.csv, AA.csv, B.csv, etc.)
 
 
 ##  Work in progress
