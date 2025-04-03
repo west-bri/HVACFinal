@@ -25,9 +25,9 @@ for filename in os.listdir(terminalFiles):
     for colName, colData in fileData.items():
         if setPoint in colName:
             fileData[colName] = fileData[colName].ffill()
-    fileData.drop(columns = ['Air_Flow_Diff'])
-    fileData.drop(columns = ['Room_Temperature_Diff'])
-    fileData.drop(columns = ['VAV_Temperature_Diff'])
+    fileData.drop(columns = ['Air_Flow_Diff'], inplace=True)
+    fileData.drop(columns = ['Room_Temperature_Diff'], inplace=True)
+    fileData.drop(columns = ['VAV_Temperature_Diff'], inplace=True)
     fileData.to_csv(os.path.join(cleanTerminalFiles,filename))
     
             
@@ -68,17 +68,18 @@ rawRTU2 = pd.read_csv('data/roofTopUnits/RTU_2.csv')
 rawRTU3 = pd.read_csv('data/roofTopUnits/RTU_3.csv') # different columns? different type of unit
 
 timelessRTU1 = rawRTU1
-timelessRTU1.drop(columns=['time'])
+timelessRTU1.drop(columns=['time'], inplace=True)
 timelessRTU2 = rawRTU2
-timelessRTU2.drop(columns=['time'])
+timelessRTU2.drop(columns=['time'], inplace=True)
 timelessRTU3 = rawRTU3
-timelessRTU3.drop(columns=['time'])
+timelessRTU3.drop(columns=['time'], inplace=True)
 
+print()
 
 #approach find correlation between ALL RTU columns and ALL terminal unit columns (except time lol)
 for filename in os.listdir(cleanTerminalFiles):
     fileData = pd.read_csv(os.path.join(cleanTerminalFiles,filename))
-    fileData.drop(columns=['time'])
+    fileData.drop(columns=['time'], inplace=True)
     corr1 = timelessRTU1.corrwith(fileData)
     corr2 = timelessRTU2.corrwith(fileData)
     corr3 = timelessRTU3.corrwith(fileData)
