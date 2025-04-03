@@ -17,7 +17,7 @@
 - /data/roofTopUnits
 - /data/terminalUnits
 
-## Important info about the datasets from the client
+## Important notes about the datasets from the client
 
 - This is a customer building with multiple roof top units but only 2 of them are connected to terminal units. I included data for the 2 that are connected to terminal units and one that is not.  
 - There are 47 terminal units in the building. Each of them is connected to one of the two RTUs (not evenly split). I feel like this should give a fair amount of data to build off of and then test. 
