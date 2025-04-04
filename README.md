@@ -15,6 +15,8 @@ We are given:
 ##  Work in progress
 
 - /DataExploration_BW.py - Initial exploration of the data to determine viability of clustering, correlation, etc.
+- /DataExploration_CS.py - Claude-generated code to do a quick search for filled-out rows across all TUs that share a timestamp
+- /timeslice_test.ipynb - runs on google colab with timeslice_test.csv - initial attempt at some 1D clustering
 - /data/terminalDescription.txt examines measures of central tendancy of the features we'll be studying
 
 ### Data files created so far
