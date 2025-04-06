@@ -1,8 +1,8 @@
 ,0
 ClgPct,
-HtgPct,0.028049173971812932
+HtgPct,0.11683387735338478
 RmSp,
-RmTemp,0.21174367630802762
+RmTemp,0.26512808477004823
 UnoccClgSp,
 UnoccHtgSp,
 AirFlow,
@@ -24,8 +24,9 @@ OccStatus,
 OutAirDmprFbk,
 OutAirHum,
 OutAirTemp,
-RmCo2,
 StbyClgSp,
 StbyHtgSp,
 SuplFanSpd,
 SuplFanStatus,
+Unnamed: 0,
+oppMode,

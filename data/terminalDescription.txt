@@ -1,17 +1,27 @@
 Total Rows
 206277
 
-time
-count                  206277
-unique                   4570
-top       2025-01-30 17:00:00
-freq                       47
+Unnamed: 0
+count    206277.000000
+mean       2506.058795
+std        1354.076490
+min           0.000000
+25%        1379.000000
+50%        2525.000000
+75%        3671.000000
+max        4817.000000
 
 designation
 count     206277
 unique        47
 top            Q
 freq        4570
+
+time
+count                  206277
+unique                   4570
+top       2025-01-30 17:00:00
+freq                       47
 
 AirFlow
 count    206277.000000
