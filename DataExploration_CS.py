@@ -183,7 +183,7 @@ def export_common_rows(common_data, output_file):
 
 def main():
     # Example usage
-    csv_directory = "data/terminalUnits"  # Update this path
+    csv_directory = "data/cleanTerminalUnits"  # Update this path
     output_file = os.path.join(csv_directory, "common_timestamps.csv")
     
     csv_files = glob.glob(os.path.join(csv_directory, "*.csv"))
