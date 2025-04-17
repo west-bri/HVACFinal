@@ -17,6 +17,7 @@ We are given:
 - /DataExploration_BW.py - Initial exploration of the data to determine viability of clustering, correlation, etc.
 - /DataExploration_CS.py - Claude-generated code to do a quick search for filled-out rows across all TUs that share a timestamp
 - /HVAC_Data_Analysis_CS.ipynb - Jupyter notebook containing multiple views/analyses of various preparations of the data
+- /HVAC_Bini.ipynb - Jupter notebbok having data exploration, pre-processing, cleaning, clustering and correlaion.
 - /HVAC_Final_Presentation.pptx - powerpoint for presentation
 - /csv_edit_CS.py, /merge_datasets.py - tools for manipulating data
 - /timeslice_test.ipynb - runs on google colab with timeslice_test.csv - initial attempt at some 1D clustering
@@ -29,6 +30,7 @@ We are given:
 - /data/terminalDistinctValues.csv
 - /data/terminalUnitsCleaned.csv
 - /data/terminalUnitsRawData.csv
+- /cleaned_data - All clean data generated on executing the HVAC_Bini.ipynb - Jupter notebbok.
 
 ### Data Directory - Folders containing client data
 
