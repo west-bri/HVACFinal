@@ -24,6 +24,9 @@ rawRTU1 = pd.read_csv('data/roofTopUnits/RTU_1.csv')
 rawRTU2 = pd.read_csv('data/roofTopUnits/RTU_2.csv')
 rawRTU3 = pd.read_csv('data/roofTopUnits/RTU_3.csv') # different columns? different type of unit
 
+setPoint = 'Sp'
+
+
 
 # rawRTU1 = pd.read_csv('data/roofTopUnits/RTU_1.csv')
 # rawRTU2 = pd.read_csv('data/roofTopUnits/RTU_2.csv')
@@ -31,7 +34,7 @@ rawRTU3 = pd.read_csv('data/roofTopUnits/RTU_3.csv') # different columns? differ
 
 
 # Cleaning TU files (forward-fill setpoints + drop unwanted columns)
-setPoint = 'Sp'
+
 fileColumnNames = defaultdict(list)
 for filename in os.listdir(terminalFiles):
     fileData = pd.read_csv(os.path.join(terminalFiles,filename))
@@ -68,9 +71,9 @@ for filename in os.listdir(terminalFiles):
 
     #  Dropping unnecessary columns(as per client's suggestion)      
     fileData.drop(columns = ['Air_Flow_Diff', 'Room_Temperature_Diff', 'VAV_Temperature_Diff', 'SaTemp', 'oppMode'], inplace=True, errors='ignore')
-    fileData.to_csv(os.path.join(cleanTerminalFiles,filename))
-    
-            
+    fileData.to_csv(os.path.join(cleanTerminalFiles,filename))    
+
+
 # #merge all the files into one file
 terminalUnitsCleanData = pd.DataFrame()
 for filename in os.listdir(cleanTerminalFiles):
@@ -96,7 +99,35 @@ file.write("Total Rows\n")
 file.write(str(len(terminalUnitsCleanData)))
 file.write("\n\n")
 
+
 for colName, data in terminalUnitsCleanData.items():
+    file.write(colName)
+    file.write("\n")
+    file.write(data.describe().to_string())
+    file.write("\n\n")
+file.close()
+
+file = open("data/RTUdescription.txt", "w")
+file.write("Total Rows RTU1\n")
+file.write(str(len(rawRTU1)))
+file.write("\n\n")
+for colName, data in rawRTU1.items():
+    file.write(colName)
+    file.write("\n")
+    file.write(data.describe().to_string())
+    file.write("\n\n")
+file.write("Total Rows RTU2\n")
+file.write(str(len(rawRTU2)))
+file.write("\n\n")
+for colName, data in rawRTU2.items():
+    file.write(colName)
+    file.write("\n")
+    file.write(data.describe().to_string())
+    file.write("\n\n")
+file.write("Total Rows RTU3\n")
+file.write(str(len(rawRTU3)))
+file.write("\n\n")
+for colName, data in rawRTU3.items():
     file.write(colName)
     file.write("\n")
     file.write(data.describe().to_string())
@@ -163,44 +194,47 @@ rawRTU1.drop(columns=['oppMode'], inplace=True)
 rawRTU2.drop(columns=['oppMode'], inplace=True)
 rawRTU3.drop(columns=['oppMode'], inplace=True)
 
+
+
+#Clustering Terminal Units was not successful. only 65% accuracy. 
 #cluster terminal units on time basis
 # get distinct time stamps
-timestamps = terminalUnitsCleanData['time'].unique()
-designations = terminalUnitsCleanData['designation'].unique()
-timestamps.sort()
+# timestamps = terminalUnitsCleanData['time'].unique()
+# designations = terminalUnitsCleanData['designation'].unique()
+# timestamps.sort()
 
-numberOfClusters = 2 #number of RTUs
-num_inits = 10
-num_max_iter = 300
-interias = []
+# numberOfClusters = 2 #number of RTUs
+# num_inits = 10
+# num_max_iter = 300
+# interias = []
 
 
-km = KMeans(n_clusters = numberOfClusters, n_init = num_inits, max_iter = num_max_iter)
+# km = KMeans(n_clusters = numberOfClusters, n_init = num_inits, max_iter = num_max_iter)
 
-#create dataframe for that timestamp
-clusterCount = {}
-count = 0
-for timestamp in timestamps:
-    terminalData = terminalUnitsCleanData.loc[terminalUnitsCleanData['time'] == timestamp]
-    if len(terminalData) == 47:
-        count = count + 1 
-        clusterData =  km.fit_predict(terminalData.drop(columns = ['time','designation']))
-        terminalData.insert(0,'cluster', clusterData)
-        cluster0 = terminalData[terminalData['cluster'] == 0]
-        cluster1 = terminalData[terminalData['cluster'] == 1]
-        cluster0String = ','.join(cluster0['designation'].tolist())
-        cluster1String = ','.join(cluster1['designation'].tolist())
-        if cluster0String in clusterCount:
-            clusterCount[cluster0String] = clusterCount[cluster0String] + 1
-        else:
-            clusterCount[cluster0String] = 1
-        if cluster1String in clusterCount:
-            clusterCount[cluster1String] = clusterCount[cluster1String] + 1
-        else:
-            clusterCount[cluster1String] = 1
+# #create dataframe for that timestamp
+# clusterCount = {}
+# count = 0
+# for timestamp in timestamps:
+#     terminalData = terminalUnitsCleanData.loc[terminalUnitsCleanData['time'] == timestamp]
+#     if len(terminalData) == 47:
+#         count = count + 1 
+#         clusterData =  km.fit_predict(terminalData.drop(columns = ['time','designation']))
+#         terminalData.insert(0,'cluster', clusterData)
+#         cluster0 = terminalData[terminalData['cluster'] == 0]
+#         cluster1 = terminalData[terminalData['cluster'] == 1]
+#         cluster0String = ','.join(cluster0['designation'].tolist())
+#         cluster1String = ','.join(cluster1['designation'].tolist())
+#         if cluster0String in clusterCount:
+#             clusterCount[cluster0String] = clusterCount[cluster0String] + 1
+#         else:
+#             clusterCount[cluster0String] = 1
+#         if cluster1String in clusterCount:
+#             clusterCount[cluster1String] = clusterCount[cluster1String] + 1
+#         else:
+#             clusterCount[cluster1String] = 1
 
-print(clusterCount)
-print(count)
+# print(clusterCount)
+# print(count)
 
         
         
