@@ -30,7 +30,7 @@ We are given:
 - /data/terminalDistinctValues.csv
 - /data/terminalUnitsCleaned.csv
 - /data/terminalUnitsRawData.csv
-- /cleaned_data - All clean data generated on executing the HVAC_Bini.ipynb - Jupter notebbok.
+- /data_Bini/cleaned_data - All clean data generated on executing the HVAC_Bini.ipynb - Jupter notebbok.
 
 ### Data Directory - Folders containing client data
 
